@@ -1,1 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VisionCraft AI Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+🎬 VisionCraft AI
+
+</div>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+<li><a href="/history">History</a></li>
+
+</ul>
+
+</nav>
+
+<div class="dashboard">
+
+<h1>AI Video Generator</h1>
+
+<p>Create professional AI videos from text prompts.</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>📝 Prompt</h3>
+
+<h2>A futuristic city at sunset</h2>
+
+</div>
+
+<div class="card">
+
+<h3>🎥 Video Status</h3>
+
+<h2>Completed ✅</h2>
+
+</div>
+
+<div class="card">
+
+<h3>⏱ Duration</h3>
+
+<h2>8 Seconds</h2>
+
+</div>
+
+<div class="card">
+
+<h3>📏 Resolution</h3>
+
+<h2>1280 × 720</h2>
+
+</div>
+
+</div>
+
+<div class="video-preview">
+
+<h2>🎥 Generated Video</h2>
+
+<video controls width="100%">
+
+<source src="/static/sample.mp4" type="video/mp4">
+
+</video>
+
+</div>
+
+<div class="actions">
+
+<button>⬇ Download Video</button>
+
+<button>🔄 Generate Again</button>
+
+</div>
+
+<div class="insights">
+
+<h2>🤖 AI Insights</h2>
+
+<ul>
+
+<li>✅ Video generated successfully.</li>
+
+<li>🎨 High-quality cinematic style selected.</li>
+
+<li>⚡ Processing time: 28 seconds.</li>
+
+<li>🎬 Best suited for YouTube Shorts.</li>
+
+<li>📱 Mobile-friendly output.</li>
+
+</ul>
+
+</div>
+
+<div class="stats">
+
+<div class="card">
+
+<h3>🎬 Videos Generated</h3>
+
+<h2>126</h2>
+
+</div>
+
+<div class="card">
+
+<h3>⭐ Success Rate</h3>
+
+<h2>99%</h2>
+
+</div>
+
+<div class="card">
+
+<h3>⚡ Average Time</h3>
+
+<h2>31 sec</h2>
+
+</div>
+
+<div class="card">
+
+<h3>💾 Downloads</h3>
+
+<h2>97</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
