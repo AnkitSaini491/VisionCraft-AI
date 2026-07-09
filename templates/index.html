@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +7,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>VisionCraft AI</title>
+<title>VisionCraft AI - Text to Video</title>
 
 <link rel="stylesheet"
 href="{{ url_for('static', filename='style.css') }}">
@@ -23,9 +22,7 @@ rel="stylesheet">
 <nav>
 
 <div class="logo">
-
 🎬 VisionCraft AI
-
 </div>
 
 <ul>
@@ -44,26 +41,25 @@ rel="stylesheet">
 
 <div class="hero-content">
 
-<h1>Create Amazing AI Videos</h1>
+<h1>Create AI Videos From Text</h1>
 
 <p>
 
-Turn your ideas into stunning AI-generated videos in seconds.
-
-Just enter a prompt and let AI do the magic.
+Describe your idea and generate stunning AI videos in seconds.
 
 </p>
 
-<form action="/dashboard">
+<form action="/generate" method="POST">
 
 <input
 type="text"
-placeholder="Describe your video..."
+name="prompt"
+placeholder="Example: A futuristic city at sunset..."
 required>
 
-<button>
+<button type="submit">
 
-Generate Video
+Generate Video 🚀
 
 </button>
 
@@ -79,15 +75,15 @@ Generate Video
 
 <h2>🎥 Text to Video</h2>
 
-<p>Create videos from simple text prompts.</p>
+<p>Generate cinematic AI videos using simple prompts.</p>
 
 </div>
 
 <div class="feature-card">
 
-<h2>⚡ Fast Generation</h2>
+<h2>⚡ Fast AI</h2>
 
-<p>Generate AI videos within minutes.</p>
+<p>Quick AI-powered video generation workflow.</p>
 
 </div>
 
@@ -95,7 +91,7 @@ Generate Video
 
 <h2>⬇ Download</h2>
 
-<p>Download generated videos instantly.</p>
+<p>Download your generated videos instantly.</p>
 
 </div>
 
@@ -103,7 +99,7 @@ Generate Video
 
 <h2>📜 History</h2>
 
-<p>View all previously generated videos.</p>
+<p>Access all your previous AI generations.</p>
 
 </div>
 
@@ -113,7 +109,7 @@ Generate Video
 
 <p>
 
-© 2026 VisionCraft AI
+© 2026 VisionCraft AI | Developed with Flask
 
 </p>
 
