@@ -25,6 +25,7 @@ def generate():
     prompt = request.form.get("prompt")
 
     try:
+
         video = generate_video(prompt)
 
         return render_template(
@@ -34,7 +35,13 @@ def generate():
         )
 
     except Exception as e:
-        return f"Error: {e}"
+
+        return render_template(
+            "dashboard.html",
+            prompt=prompt,
+            video=None,
+            error=str(e)
+        )
 
 
 if __name__ == "__main__":
