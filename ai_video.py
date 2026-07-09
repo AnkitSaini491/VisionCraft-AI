@@ -1,9 +1,18 @@
-import requests
-from config import REPLICATE_API_TOKEN
+import os
+import replicate
 
+os.environ["REPLICATE_API_TOKEN"] = os.getenv("REPLICATE_API_TOKEN")
 
 def generate_video(prompt):
-    return {
-        "status": "Coming Soon",
-        "prompt": prompt
-    }
+
+    output = replicate.run(
+
+        "kwaivgi/kling-v1.6-pro",
+
+        input={
+            "prompt": prompt
+        }
+
+    )
+
+    return output
