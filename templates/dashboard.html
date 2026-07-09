@@ -2,18 +2,14 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>VisionCraft AI Dashboard</title>
 
-<link rel="stylesheet"
-href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -22,24 +18,27 @@ rel="stylesheet">
 <nav>
 
 <div class="logo">
-
 🎬 VisionCraft AI
-
 </div>
 
 <ul>
-
 <li><a href="/">Home</a></li>
-
 <li><a href="/dashboard">Dashboard</a></li>
-
 <li><a href="/history">History</a></li>
-
 </ul>
 
 </nav>
 
 <div class="dashboard">
+
+{% if error %}
+
+<div class="card" style="background:#7f1d1d;margin-bottom:20px;">
+<h3>❌ Error</h3>
+<p>{{ error }}</p>
+</div>
+
+{% endif %}
 
 <h1>AI Video Generator</h1>
 
@@ -48,35 +47,23 @@ rel="stylesheet">
 <div class="cards">
 
 <div class="card">
-
 <h3>📝 Prompt</h3>
-
-<h2>A futuristic city at sunset</h2>
-
+<h2>{{ prompt if prompt else "No Prompt" }}</h2>
 </div>
 
 <div class="card">
-
 <h3>🎥 Video Status</h3>
-
-<h2>Completed ✅</h2>
-
+<h2>{% if video %}Completed ✅{% else %}Waiting ⏳{% endif %}</h2>
 </div>
 
 <div class="card">
-
 <h3>⏱ Duration</h3>
-
 <h2>8 Seconds</h2>
-
 </div>
 
 <div class="card">
-
 <h3>📏 Resolution</h3>
-
 <h2>1280 × 720</h2>
-
 </div>
 
 </div>
@@ -85,19 +72,47 @@ rel="stylesheet">
 
 <h2>🎥 Generated Video</h2>
 
-<video controls width="100%">
+{% if video %}
 
-<source src="/static/sample.mp4" type="video/mp4">
+<video controls width="100%" style="border-radius:15px;">
+
+<source src="{{ video }}" type="video/mp4">
+
+Your browser does not support the video tag.
 
 </video>
+
+{% else %}
+
+<div class="card">
+
+<h2>No Video Generated Yet</h2>
+
+<p>Generate your first AI video from the home page.</p>
+
+</div>
+
+{% endif %}
 
 </div>
 
 <div class="actions">
 
+{% if video %}
+
+<a href="{{ video }}" download>
+
 <button>⬇ Download Video</button>
 
+</a>
+
+{% endif %}
+
+<a href="/">
+
 <button>🔄 Generate Again</button>
+
+</a>
 
 </div>
 
@@ -107,15 +122,15 @@ rel="stylesheet">
 
 <ul>
 
-<li>✅ Video generated successfully.</li>
+<li>✅ AI video generation completed successfully.</li>
 
-<li>🎨 High-quality cinematic style selected.</li>
+<li>🎨 Cinematic rendering mode enabled.</li>
 
-<li>⚡ Processing time: 28 seconds.</li>
+<li>⚡ Fast AI processing pipeline.</li>
 
-<li>🎬 Best suited for YouTube Shorts.</li>
+<li>🎬 Optimized for YouTube Shorts & Instagram Reels.</li>
 
-<li>📱 Mobile-friendly output.</li>
+<li>📱 Mobile friendly output.</li>
 
 </ul>
 
@@ -124,35 +139,23 @@ rel="stylesheet">
 <div class="stats">
 
 <div class="card">
-
 <h3>🎬 Videos Generated</h3>
-
 <h2>126</h2>
-
 </div>
 
 <div class="card">
-
 <h3>⭐ Success Rate</h3>
-
 <h2>99%</h2>
-
 </div>
 
 <div class="card">
-
 <h3>⚡ Average Time</h3>
-
 <h2>31 sec</h2>
-
 </div>
 
 <div class="card">
-
 <h3>💾 Downloads</h3>
-
 <h2>97</h2>
-
 </div>
 
 </div>
